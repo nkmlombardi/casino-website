@@ -1,3 +1,20 @@
+html, body {
+    overflow-x: hidden;
+}
+
+header .button-header .custom-btn.login {
+    background: #FFC565;
+}
+
+header .button-header .custom-btn.login:hover {
+    background: #FFC565;
+}
+
+header .button-header .custom-btn {
+    background: #FFFFFF;
+    color: #000;
+}
+
 .why-choose .inside a {
     font-family: Roboto;
     font-weight: bold;
@@ -25,8 +42,8 @@
     overflow: hidden;
     transform: skewY(-12deg);
     transform-origin: 0;
-    /* background: linear-gradient(150deg, #111 0%, #191919 100%); */
-    background: #111;
+    /* background: linear-gradient(150deg, #121212 0%, #191919 100%); */
+    background: #121212;
 }
 
 .wrapper {
@@ -38,7 +55,7 @@
 }
 
 .why-choose .inside {
-    background: #111;
+    background: #121212;
     box-shadow: 1px 1px 22px rgba(0, 0, 0, 0.05);
 }
 
@@ -47,18 +64,34 @@
 }
 
 .why-choose .inside p {
-    color: rgb(163, 163, 163);
+    color: rgb(209, 207, 219);
+}
+
+.why-choose .inside a.read-more {
+    color: #FFC565;
+    font-weight: normal;
+    font-family: Roboto;
+}
+
+.why-choose .inside a.read-more:before {
+    background-color: #FFC565;
 }
 
 .faq {
     position: relative;
     overflow: visible;
     margin-top: 400px;
+    padding-bottom: 100px;
     z-index: 10;
+    background: #121212;
+}
+
+.faq .container {
+    margin-top: 50px;
 }
 
 .faq .stripe {
-    height: 200%;
+    height: 100%;
 }
 
 .title-head {
@@ -79,5 +112,46 @@
     color: #fff;
 }
 .info-pricing ul li p {
-    color: rgb(163, 163, 163);
+    color: rgb(209, 207, 219);
+}
+
+.about-block {
+    padding-top: 100px;
+}
+
+.hosting-software.white li span {
+    color: rgb(209, 207, 219);
+}
+
+.our-team ul li .inside {
+    background: transparent;
+}
+
+.our-team ul li .name {
+    color: #fff;
+}
+
+.our-team ul li span {
+    color: rgb(209, 207, 219);
+}
+
+footer {
+    background: transparent;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.widget-footer h4 {
+    font-family: Roboto;
+}
+
+.widget-footer ul li a {
+    color: rgb(209, 207, 219);
+}
+
+.widget-footer p {
+    color: rgb(209, 207, 219);
+}
+
+.copyright {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
