@@ -2,17 +2,60 @@ html, body {
     overflow-x: hidden;
 }
 
+.logo {
+    background: #ffc565;
+    padding: 10px 20px;
+    display: inline-block;
+    border-radius: 4px;
+}
+
+.logo div {
+    font-family: Roboto;
+    font-size: 2em;
+    text-transform: uppercase;
+}
+
 header .button-header .custom-btn.login {
-    background: #FFC565;
+    background: #FFF;
 }
 
 header .button-header .custom-btn.login:hover {
+    background: #FFF;
+    color: #0f0f0f;
+}
+
+header .button-header .custom-btn.signup {
     background: #FFC565;
 }
 
-header .button-header .custom-btn {
-    background: #FFFFFF;
-    color: #000;
+header .button-header .custom-btn.signup:hover {
+    background: #FFC565;
+    color: #0f0f0f;
+    margin-top: -10px;
+}
+
+.custom-btn {
+    background: #FFC565;
+    color: #0f0f0f !important;
+    font-family: Roboto !important;
+    transition: 0.1s linear all !important;
+}
+
+.custom-btn:hover {
+    transform: translateY(-2.5px) !important;
+}
+
+header .menu li:before {
+    background: #FFC565;
+    width: 50%;
+}
+
+.base-slider .custom-btn:hover {
+    transition: 0.1s linear all;
+}
+
+.base-slider .custom-btn:hover {
+    transform: translateY(-2.5px);
 }
 
 .why-choose .inside a {
@@ -30,8 +73,29 @@ header .button-header .custom-btn {
     position: relative;
 }
 
+.base-slider .inside {
+    width: 60%;
+}
+
+.base-slider h2 {
+    font-family: Roboto;
+}
+
+.base-slider p {
+    color: rgb(209, 207, 219);
+    text-transform: none;
+    font-family: Roboto;
+    font-size: 17px;
+}
+
 .base-slider .stripe {
     z-index: 0;
+}
+
+.base-slider .custom-btn {
+    background: #FFC565;
+    color: #0f0f0f;
+    font-family: Roboto;
 }
 
 .stripe {
@@ -57,6 +121,11 @@ header .button-header .custom-btn {
 .why-choose .inside {
     background: #121212;
     box-shadow: 1px 1px 22px rgba(0, 0, 0, 0.05);
+    transition: 0.1s linear all;
+}
+
+.why-choose .inside:hover {
+    transform: translateY(-5px);
 }
 
 .why-choose .inside a {
@@ -65,6 +134,7 @@ header .button-header .custom-btn {
 
 .why-choose .inside p {
     color: rgb(209, 207, 219);
+    font-size: 16px;
 }
 
 .why-choose .inside a.read-more {
@@ -77,13 +147,23 @@ header .button-header .custom-btn {
     background-color: #FFC565;
 }
 
+.why-choose .inside i.icon-major {
+    color: #FFC565;
+    font-size: 8em;
+    margin-bottom: 25px;
+    /* text-shadow: 1px rgba(0, 0, 0, 0.25); */
+}
+
+.why-choose .inside i.icon-arrow {
+    color: #FFC565;
+}
+
 .faq {
     position: relative;
     overflow: visible;
-    margin-top: 400px;
-    padding-bottom: 100px;
     z-index: 10;
     background: #121212;
+    margin: 25% 0 25% 0;
 }
 
 .faq .container {
@@ -91,7 +171,8 @@ header .button-header .custom-btn {
 }
 
 .faq .stripe {
-    height: 100%;
+    height: 150%;
+    top: -10%;
 }
 
 .title-head {
@@ -113,14 +194,40 @@ header .button-header .custom-btn {
 }
 .info-pricing ul li p {
     color: rgb(209, 207, 219);
+    font-size: 16px;
+}
+
+.info-pricing ul li {
+    position: relative;
+    background: none;
+}
+
+.info-pricing ul li:before {
+    content: '\f059';
+    font-family: 'FontAwesome';
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 1.5em;
+    color: #FFC565;
 }
 
 .about-block {
-    padding-top: 100px;
+    position: relative;
+    background: transparent;
+    padding-top: 0;
+}
+
+.about-block .stripe {
+    height: 25%;
 }
 
 .hosting-software.white li span {
     color: rgb(209, 207, 219);
+}
+
+.our-team {
+    margin-bottom: 0;
 }
 
 .our-team ul li .inside {
@@ -137,11 +244,46 @@ header .button-header .custom-btn {
 
 footer {
     background: transparent;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    /* border-top: 1px solid rgba(255, 255, 255, 0.1); */
+    position: relative;
+    z-index: 0;
+    margin-top: 25%;
+    padding-top: 0;
+    background: #121212;
+}
+
+footer .stripe {
+    height: 50%;
+}
+
+.search-domain form input {
+    background: #060606;
+    box-shadow: none;
+    outline: 0;
+    color: rgb(209, 207, 219);
+    /* border-radius: 0; */
+}
+
+.search-domain form input::placeholder {
+    color: rgb(209, 207, 219);
+}
+
+.search-domain form .custom-btn {
+    background: #FFC565;
+    color: #0f0f0f;
+    font-family: Roboto;
+    box-shadow: none;
+    /* border-radius: 0; */
+    height: 45px;
+}
+
+.search-domain form .custom-btn:hover {
+    background: #FFC565;
 }
 
 .widget-footer h4 {
     font-family: Roboto;
+    margin-bottom: 15px;
 }
 
 .widget-footer ul li a {
@@ -152,6 +294,27 @@ footer {
     color: rgb(209, 207, 219);
 }
 
+.widget-footer .logo {
+    margin-bottom: 25px;
+}
+
+.social-icon li {
+    background: #FFC565;
+}
+
+.social-icon i {
+    color: #0f0f0f;
+}
+
 .copyright {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgb(209, 207, 219);
+}
+
+.copyright p {
+    color: rgb(209, 207, 219);
+}
+
+.search-domain {
+    background: transparent;
 }
