@@ -17,6 +17,6 @@ app.use((req, res, next) => {
 app.use(express.static('./'))
 
 // Launch server
-app.listen(process.env.PORT, () => {
-    console.log('Dashboard process listening on port ' + process.env.PORT + '!')
+app.listen(3000, () => {
+    console.log('Dashboard process listening on port ' + 3000 + '!')
 })
