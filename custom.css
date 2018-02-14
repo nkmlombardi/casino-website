@@ -15,6 +15,10 @@ html, body {
     text-transform: uppercase;
 }
 
+header .button-header .custom-btn {
+    box-shadow: none;
+}
+
 header .button-header .custom-btn.login {
     background: #FFF;
 }
@@ -69,7 +73,7 @@ header .menu li:before {
 }
 
 .base-slider {
-    height: 800px;
+    height: 1200px;
     position: relative;
 }
 
@@ -96,6 +100,7 @@ header .menu li:before {
     background: #FFC565;
     color: #0f0f0f;
     font-family: Roboto;
+    box-shadow: none;
 }
 
 .stripe {
@@ -162,8 +167,7 @@ header .menu li:before {
     position: relative;
     overflow: visible;
     z-index: 10;
-    background: #121212;
-    margin: 25% 0 25% 0;
+    margin: 90px 0 25% 0;
 }
 
 .faq .container {
@@ -317,4 +321,64 @@ footer .stripe {
 
 .search-domain {
     background: transparent;
+}
+
+
+/* ----------------------- */
+
+.roulette {
+    position: relative;
+    height: 300px;
+    width: 100%;
+    margin: 25% 0 10px 0;
+}
+
+.roulette-banner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    transform: skewY(-12deg);
+    transform-origin: 0;
+    background: linear-gradient(150deg, #121212 0%, #191919 100%);
+    /* background: #121212; */
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    box-shadow: 0px 3px 5px 5px rgba(0, 0, 0, 0.15);
+}
+
+.roulette-row {
+    flex: 1;
+    display: flex;
+}
+
+.roulette-cell {
+    flex: 1;
+    display: flex;
+    font-size: 2em;
+    color: rgba(255, 109, 101, 0.5);
+    /* color: rgba(78, 198, 93, 0.5); */
+    transition: 0.25s all;
+    cursor: pointer;
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+}
+
+
+.roulette-cell.gold {
+    color: rgba(255, 197, 101, 1) !important;
+}
+
+.roulette-cell span {
+    margin: auto;
+}
+
+.roulette-row:nth-child(odd) .roulette-cell:nth-child(odd) {
+    background: rgba(0, 0, 0, 0.25);
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.roulette-row:nth-child(even) .roulette-cell:nth-child(even) {
+    background: rgba(0, 0, 0, 0.25);
+    color: rgba(255, 255, 255, 0.5);
 }
