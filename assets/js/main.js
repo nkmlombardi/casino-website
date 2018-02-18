@@ -158,6 +158,7 @@ $(document).ready(function() {
         if (roulette.picked === selectedNumber) {
             roulette.picked = false
             $('.controls').hide()
+            $('.roulette-cell').removeClass('gold')
         } else {
             roulette.picked = Number(event.target.outerText)
             $('.controls').show()
