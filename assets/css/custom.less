@@ -7,12 +7,15 @@ html, body {
     padding: 10px 20px;
     display: inline-block;
     border-radius: 4px;
-}
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
 
-.logo div {
-    font-family: Roboto;
-    font-size: 2em;
-    text-transform: uppercase;
+    div {
+        font-family: Roboto;
+        font-size: 2em;
+        text-transform: uppercase;
+    }
 }
 
 header .button-header .custom-btn {
@@ -49,14 +52,19 @@ header .button-header .custom-btn.signup:hover {
 }
 
 header {
-    background: #121212 !important;
+    // background: #121212 !important;
     padding: 25px 0 !important;
-    box-shadow: 0px 0px 15px 15px rgba(0, 0, 0, 0.25);
+    // box-shadow: 0px 0px 15px 15px rgba(0, 0, 0, 0.25);
 }
 
 header .menu li:before {
     background: #FFC565;
     width: 50%;
+}
+
+header .menu {
+    text-align: center;
+    margin: 0;
 }
 
 .base-header .custom-btn:hover {
@@ -134,7 +142,7 @@ header .menu li:before {
 }
 
 .base-header {
-    height: 1000px;
+    height: 1050px;
     position: relative;
 }
 
@@ -261,6 +269,7 @@ header .menu li:before {
     font-size: 16px;
     color: #fff;
 }
+
 .info-pricing ul li p {
     color: rgb(209, 207, 219);
     font-size: 16px;
@@ -409,13 +418,18 @@ footer .stripe {
     height: 300px;
     width: 100%;
     margin: 0 0 10px 0;
-    
-    -webkit-touch-callout: none; /* iOS Safari */
-  -webkit-user-select: none; /* Safari */
-   -khtml-user-select: none; /* Konqueror HTML */
-     -moz-user-select: none; /* Firefox */
-      -ms-user-select: none; /* Internet Explorer/Edge */
-          user-select: none; /* Non-prefixed version, currently
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently
                                 supported by Chrome and Opera */
 }
 
@@ -423,7 +437,7 @@ footer .stripe {
     position: absolute;
     width: 100%;
     height: 100%;
-    overflow: hidden;
+    overflow: visible !important;
     transform: skewY(-12deg);
     transform-origin: 0;
     background: linear-gradient(150deg, #121212 0%, #191919 100%);
@@ -432,41 +446,180 @@ footer .stripe {
     flex: 1;
     flex-direction: column;
     box-shadow: 0px 3px 5px 5px rgba(0, 0, 0, 0.15);
-}
 
-.roulette-row {
-    flex: 1;
-    display: flex;
-}
+    .roulette-row {
+        flex: 1;
+        display: flex;
+    }
 
-.roulette-cell {
-    flex: 1;
-    display: flex;
-    font-size: 2em;
-    color: rgba(255, 109, 101, 0.5);
-    /* color: rgba(78, 198, 93, 0.5); */
-    transition: 0.25s all;
-    cursor: pointer;
-    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
-}
+    .roulette-cell {
+        flex: 1;
+        display: flex;
+        font-size: 2em;
+        color: rgba(255, 109, 101, 0.5);
+        /* color: rgba(78, 198, 93, 0.5); */
+        transition: 0.25s all;
+        cursor: pointer;
+        text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    .roulette-cell.gold {
+        color: rgba(255, 197, 101, 1) !important;
+    }
+
+    .roulette-cell span {
+        margin: auto;
+    }
+
+    .roulette-row:nth-child(odd) .roulette-cell:nth-child(odd) {
+        background: rgba(0, 0, 0, 0.25);
+        color: rgba(255, 255, 255, 0.5);
+    }
+
+    .roulette-row:nth-child(even) .roulette-cell:nth-child(even) {
+        background: rgba(0, 0, 0, 0.25);
+        color: rgba(255, 255, 255, 0.5);
+    }
+
+    .controls {
+        position: absolute;
+        bottom: -150px;
+        left: 0;
+        height: 150px;
+        width: 100%;
+        display: flex;
+
+        .play {
+            width: (100% / 11);
+            height: 50%;
+            font-size: 2em;
+            color: #333;
+            margin: 0 auto;
+            background: rgba(255, 197, 101, 1);
+            display: flex;
+            justify-content: center;
+            cursor: pointer;
+
+            span {
+                margin: auto;
+            }
+        }
+    }
+
+    .result-container {
+        display: flex;
+        position: absolute;
+        top: 0;
+        left: (100% / 3);
+        width: (100% / 3);
+        height: 100%;
+        background: rgba(0, 0, 0, 0.75);
+        justify-content: center;
+        padding: 50px 0;
+        z-index: 100;
+        animation: fadein 1s ease-in;
 
 
-.roulette-cell.gold {
-    color: rgba(255, 197, 101, 1) !important;
-}
+        @keyframes fadein {
+            from { opacity: 0; }
+            to   { opacity: 1; }
+        }
 
-.roulette-cell span {
-    margin: auto;
-}
+        .result {
+            color: rgba(255, 255, 255, 0.75);
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            justify-content: space-around;
 
-.roulette-row:nth-child(odd) .roulette-cell:nth-child(odd) {
-    background: rgba(0, 0, 0, 0.25);
-    color: rgba(255, 255, 255, 0.5);
-}
+            span {
+                font-size: 3em;
+                // flex: 1;
+            }
 
-.roulette-row:nth-child(even) .roulette-cell:nth-child(even) {
-    background: rgba(0, 0, 0, 0.25);
-    color: rgba(255, 255, 255, 0.5);
+            .result-title {
+                font-size: 2em;
+            }
+        }
+    }
+
+    .track-container {
+        position: absolute;
+        top: 25%;
+        left: 0;
+        width: 100%;
+        height: 50%;
+        // background: rgba(0, 0, 0, 0.5);
+        display: flex;
+
+
+        .track {
+            position: relative;
+            display: flex;
+            flex: 1;
+            // overflow-x: auto;
+        }
+
+        .wheel {
+            position: absolute;
+            display: flex;
+            height: 100%;
+            top: 0;
+            left: -300%;
+            opacity: 0;
+
+            .number {
+                width: 150px;
+                height: 100%;
+                font-size: 4em;
+                text-align: center;
+                display: flex;
+                color: #fff;
+                margin-right: 10px;
+
+                &.green {
+                    background: #50fb94;
+                }
+
+                &.red {
+                    background: #fb5950;
+                }
+
+                &.black {
+                    background: #000;
+                }
+
+                span {
+                    margin: auto;
+                }
+            }
+
+            @keyframes slide {
+                0% {
+                    left: 0%;
+                    opacity: 0;
+                }
+
+                40% {
+                    opacity: 1;
+                }
+
+                60% {
+                    opacity: 1;
+                }
+
+                100% {
+                    left: -300%;
+                    opacity: 0;
+                }
+            }
+
+            &.animating {
+                animation: slide 5s ease-in;
+                // animation-iteration-count: infinite;
+            }
+        }
+    }
 }
 
 .videobg {
@@ -484,7 +637,7 @@ footer .stripe {
 
 .videobg:before {
     content: '';
-    background: rgba(0, 0, 0, 0.75);
+    background: rgba(0, 0, 0, 0.6);
     z-index: 10;
     position: absolute;
     top: 0;
@@ -493,6 +646,7 @@ footer .stripe {
     width: 100%;
     filter: blur(3px);
 }
+
 
 /* horizontally center the video */
 
@@ -551,8 +705,6 @@ footer .stripe {
     border: 0 none;
 }
 
-
-
 .mobile-menu-open .mobile-block {
     position: fixed;
     top: 0;
@@ -582,7 +734,8 @@ footer .stripe {
 }
 
 ::selection {
-      background: rgba(255, 197, 101, 0.75); /* WebKit/Blink Browsers */
+    background: rgba(255, 197, 101, 0.75);
+    /* WebKit/Blink Browsers */
 }
 
 .user-slider {
@@ -614,4 +767,32 @@ footer .stripe {
 
 .user-slider .owl-next {
     background: none;
+}
+
+.card {
+    width: 300px;
+    // transform-origin: 0;
+    // transform: rotate(12deg);
+
+    &.background {
+        position: absolute;
+    }
+
+    &.club, &.heart {
+        top: 15%;
+        left: 15%;
+    }
+
+    &.spade, &.diamond {
+        bottom: 15%;
+        right: 15%;
+    }
+
+    &.club, &.spade {
+        color: rgba(255, 197, 101, 0.1);
+    }
+
+    &.heart, &.diamond {
+        color: rgba(255, 109, 101, 0.1);
+    }
 }

@@ -15,6 +15,7 @@ app.use((req, res, next) => {
 
 // Static assets
 app.use(express.static('./'))
+app.use('/vendor', express.static('./node_modules'))
 
 // Launch server
 app.listen(3000, () => {
