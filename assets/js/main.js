@@ -128,9 +128,9 @@ $(document).ready(function() {
         result: false
     }
 
-    $('.track-container').hide()
-    $('.result-container').hide()
-    $('.controls').hide()
+    $('.track-container').addClass('hide')
+    $('.result-container').addClass('hide')
+    $('.controls').addClass('hide')
 
     var wheelContext
 
@@ -157,27 +157,43 @@ $(document).ready(function() {
 
         if (roulette.picked === selectedNumber) {
             roulette.picked = false
-            $('.controls').hide()
+            $('.controls').removeClass('hide')
             $('.roulette-cell').removeClass('gold')
         } else {
             roulette.picked = Number(event.target.outerText)
-            $('.controls').show()
+            $('.controls').removeClass('hide')
         }
     })
 
     $('.play').click(function(event) {
         if (!roulette.picked) return
 
-        $('.track-container').show()
+        if (roulette.result) {
+            $('.result-container').addClass('animate-out')
+            setTimeout(function() {
+                $('.result-container').addClass('hide')
+                $('.result-container').removeClass('animate-out')
+            }, 750)
+            $('.play span').text('Spin Me!')
+            $('.roulette-cell').removeClass('gold')
+            roulette.picked = false
+            roulette.result = false
+            return
+        }
+
+        $('.track-container').removeClass('hide')
         roulette.active = true
         $('.track .wheel').addClass('animating')
 
         setTimeout(function() {
-            $('.result-container').show()
+            $('.result-container').removeClass('hide')
+            $('.play span').text('Retry?')
+            roulette.active = false
         }, 4000)
 
         setTimeout(function() {
             $('.track .wheel').removeClass('animating')
+            $('.track-container').addClass('hide')
         }, 6000)
 
         roulette.result = Math.round(Math.random() * 36)
