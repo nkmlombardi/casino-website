@@ -15,44 +15,47 @@ $(document).ready(function() {
     // **********************************************************************//
     // 01. Carousel
     // **********************************************************************//
-    // $('.base-slider, .slider').owlCarousel({
-    //     loop: true,
-    //     margin: 0,
-    //     nav: true,
-    //     navText: ["<img src='wp-content/themes/enginehosting-html/assets/images/arrow-left.png'>", "<img src='wp-content/themes/enginehosting-html/assets/images/arrow-right.png'>"],
-    //     dots: false,
-    //     item: 1,
-    //     responsive: {
-    //         0: {
-    //             items: 1
-    //         },
-    //         600: {
-    //             items: 1
-    //         },
-    //         1000: {
-    //             items: 1
-    //         }
-    //     }
-    // });
-    // $('.partner-slider').owlCarousel({
-    //     loop: true,
-    //     margin: 0,
-    //     nav: false,
-    //     autoplay: true,
-    //     dots: false,
-    //     item: 5,
-    //     responsive: {
-    //         0: {
-    //             items: 2
-    //         },
-    //         600: {
-    //             items: 3
-    //         },
-    //         1000: {
-    //             items: 5
-    //         }
-    //     }
-    // });
+    $('.base-slider, .slider').owlCarousel({
+        loop: true,
+        margin: 0,
+        nav: true,
+        navText: [
+            "<i class=\"fa fa-chevron-left\"></i>",
+            "<i class=\"fa fa-chevron-right\"></i>"
+        ],
+        dots: false,
+        item: 1,
+        responsive: {
+            0: {
+                items: 1
+            },
+            600: {
+                items: 1
+            },
+            1000: {
+                items: 1
+            }
+        }
+    });
+    $('.partner-slider').owlCarousel({
+        loop: true,
+        margin: 0,
+        nav: false,
+        autoplay: true,
+        dots: false,
+        item: 5,
+        responsive: {
+            0: {
+                items: 2
+            },
+            600: {
+                items: 3
+            },
+            1000: {
+                items: 5
+            }
+        }
+    });
 
     // **********************************************************************//
     // 02. Custom Select

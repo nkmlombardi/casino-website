@@ -409,6 +409,14 @@ footer .stripe {
     height: 300px;
     width: 100%;
     margin: 0 0 10px 0;
+    
+    -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+   -khtml-user-select: none; /* Konqueror HTML */
+     -moz-user-select: none; /* Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+          user-select: none; /* Non-prefixed version, currently
+                                supported by Chrome and Opera */
 }
 
 .roulette-banner {
@@ -575,4 +583,35 @@ footer .stripe {
 
 ::selection {
       background: rgba(255, 197, 101, 0.75); /* WebKit/Blink Browsers */
+}
+
+.user-slider {
+    margin-top: 10%;
+}
+
+.user-slider .quote {
+    font-size: 1.5em;
+    color: #fff;
+    margin-bottom: 25px;
+}
+
+.user-slider .user a {
+    color: #fff;
+}
+
+.user-slider .user span, .user-slider .inside p {
+    color: rgb(209, 207, 219);
+}
+
+.owl-nav .owl-prev i, .owl-nav .owl-next i {
+    color: #fff;
+    transition: 0.25s all;
+}
+
+.owl-nav .owl-prev i:hover, .owl-nav .owl-next i:hover {
+    transform: translateY(-2.5px);
+}
+
+.user-slider .owl-next {
+    background: none;
 }
