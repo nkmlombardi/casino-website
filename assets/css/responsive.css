@@ -250,7 +250,6 @@
 	==================================*/
     header {
         padding: 29px 0;
-        background-color: #0479ec;
     }
 
     header > .container {
@@ -259,8 +258,7 @@
 
     header.transparent {
         padding: 0;
-        height: 58px;
-        background-color: #0479ec;
+        height: 70px;
     }
 
     header.transparent.active {

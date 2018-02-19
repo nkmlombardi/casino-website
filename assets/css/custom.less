@@ -22,117 +22,113 @@ html, body {
     }
 }
 
-header .button-header .custom-btn {
-    box-shadow: none;
-}
-
-header .button-header .custom-btn.login {
-    background: #FFF;
-}
-
-header .button-header .custom-btn.login:hover {
-    background: #FFF;
-    color: #0f0f0f;
-}
-
-header .button-header .custom-btn.signup {
-    background: #FFC565;
-}
-
-header .button-header .custom-btn.signup:hover {
-    background: #FFC565;
-    color: #0f0f0f;
-}
-
-.custom-btn {
-    background: #FFC565;
-    color: #0f0f0f !important;
-    font-family: Roboto !important;
-    transition: 0.1s linear all !important;
-}
-
-.custom-btn:hover {
-    transform: translateY(-2.5px) !important;
-}
-
 header {
-    // background: #121212 !important;
-    padding: 25px 0 !important;
-    // box-shadow: 0px 0px 15px 15px rgba(0, 0, 0, 0.25);
-}
+    .button-header {
+        .custom-btn {
+            box-shadow: none;
+            background: #FFC565;
+            color: #0f0f0f !important;
+            font-family: Roboto !important;
+            transition: 0.1s linear all;
 
-header .menu li:before {
-    background: #FFC565;
-    width: 50%;
-}
+            &:hover {
+                transform: translateY(-2px) !important;
+            }
 
-header .menu {
-    text-align: center;
-    margin: 0;
+            &.login {
+                background: #FFF;
+
+                &:hover {
+                    background: #FFF;
+                    color: #0f0f0f;
+                }
+            }
+
+            &.signup {
+                background: #FFC565;
+
+                &:hover {
+                    background: #FFC565;
+                    color: #0f0f0f;
+                }
+            }
+        }
+    }
+
+    .menu {
+        text-align: center;
+        margin: 0;
+
+        li {
+            &:before {
+                background: #FFC565;
+                width: 50%;
+            }
+        }
+    }
 }
 
 .base-header .custom-btn:hover {
-    transition: 0.1s linear all;
 }
 
 .base-header .custom-btn:hover {
-    transform: translateY(-2.5px);
 }
 
 .base-header {
     padding-bottom: 10px;
-}
+    height: 1050px;
+    position: relative;
 
-.base-header h2 {
-    font-size: 50px;
-    color: #fff;
-    letter-spacing: 2px;
-    margin-bottom: 13px;
-    text-transform: capitalize;
-    font-family: "HelveticaNeueLight", serif;
-}
+    .stripe {
+        z-index: 0;
+    }
 
-.base-header p {
-    color: #c0dbf4;
-    font-size: 15px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 20px;
-}
+    .inside {
+        width: 60%;
+        top: 44%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        position: absolute;
+        text-align: center;
+    }
 
-.base-header p, .base-header a {
-    font-family: "HelveticaNeue-Medium", serif;
-}
+    .custom-btn {
+        font-size: 14px;
+        padding: 14px 33px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        border-radius: 7px;
+        display: inline-block;
 
-.base-header .custom-btn {
-    font-size: 14px;
-    color: #2378ec;
-    padding: 14px 33px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    box-shadow: 1px 1px 11px rgba(98, 129, 157, 0.4);
-    border-radius: 7px;
-    background-color: #fff;
-    display: inline-block;
-}
+        background: #FFC565;
+        color: #0f0f0f;
+        font-family: Roboto;
 
-.base-header .custom-btn:hover {
-    -ms-transform: scale(1.1);
-    transform: scale(1.1);
-}
+        &:hover {
+            transition: 0.1s linear all;
+            transform: translateY(-2.5px);
+        }
+    }
 
-.base-header .inside {
-    width: 100%;
-    top: 44%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    position: absolute;
-    text-align: center;
-}
+    h2 {
+        font-size: 50px;
+        color: #fff;
+        letter-spacing: 2px;
+        margin-bottom: 13px;
+        text-transform: capitalize;
+        font-family: Roboto;
+    }
 
-.base-header .owl-prev i, .base-header .owl-next i {
-    color: #fff;
+    p {
+        letter-spacing: 1px;
+        margin-bottom: 20px;
+
+        color: rgb(209, 207, 219);
+        text-transform: none;
+        font-family: Roboto;
+        font-size: 17px;
+    }
 }
 
 .why-choose .inside a {
@@ -143,37 +139,6 @@ header .menu {
 .copyright p {
     color: #c0dbf4;
     text-align: center;
-}
-
-.base-header {
-    height: 1050px;
-    position: relative;
-}
-
-.base-header .inside {
-    width: 60%;
-}
-
-.base-header h2 {
-    font-family: Roboto;
-}
-
-.base-header p {
-    color: rgb(209, 207, 219);
-    text-transform: none;
-    font-family: Roboto;
-    font-size: 17px;
-}
-
-.base-header .stripe {
-    z-index: 0;
-}
-
-.base-header .custom-btn {
-    background: #FFC565;
-    color: #0f0f0f;
-    font-family: Roboto;
-    box-shadow: none;
 }
 
 .stripe {
@@ -190,10 +155,6 @@ header .menu {
 
 .wrapper {
     background: #0f0f0f;
-}
-
-.bg-gray {
-    background: transparent;
 }
 
 .why-choose .inside {
@@ -257,6 +218,65 @@ header .menu {
     z-index: 10;
 }
 
+.features {
+    margin-bottom: 30%;
+
+    .row {
+        margin-top: 250px;
+    }
+
+    h4 {
+        color: #fff;
+        margin-bottom: 12px;
+        letter-spacing: 2px;
+        font-family: Roboto;
+        font-size: 34px;
+    }
+
+    p {
+        color: #d1cfdb;
+        font-size: 16px;
+        line-height: 2em;
+    }
+
+    .read-more {
+        margin-top: 25px;
+        cursor: pointer;
+        transition: 0.1s linear all;
+
+        &:hover {
+            transform: translateY(-2px);
+        }
+
+        i {
+            color: #FFC565;
+            margin-right: 15px;
+        }
+
+        a {
+            color: #fff;
+            text-transform: uppercase;
+            font-family: Roboto;
+            font-size: 14px;
+            letter-spacing: 1.6px;
+            font-weight: 600;
+            display: inline-block;
+        }
+    }
+
+    .illustration {
+        font-size: 3.5em;
+        display: flex;
+
+        i {
+            margin: auto;
+            color: #FFC565;
+        }
+    }
+}
+
+
+
 .key-points {
     margin-bottom: 20%;
 }
@@ -311,26 +331,43 @@ header .menu {
 
 .our-team {
     margin-bottom: 0;
-}
+    z-index: 10;
 
-.our-team ul li .inside {
-    background: transparent;
-}
+    ul {
+        li {
+            .inside {
+                background: transparent;
 
-.our-team ul li .name {
-    color: #fff;
-}
+                .links {
+                    display: flex;
+                    justify-content: center;
+                    margin-top: 15px;
+                    font-size: 22px;
 
-.our-team ul li span {
-    color: rgb(209, 207, 219);
-}
+                    a {
+                        margin: 0 10px;
+                        color: #fff;
 
-.our-team ul li:hover {
-    transform: translateY(-5px) !important;
-}
+                        &:hover {
+                            color: #FFC565;
+                        }
+                    }
+                }
+            }
 
-.our-team ul li:hover img {
-    transform: translateY(-5px) !important;
+            .name {
+                color: #fff;
+            }
+
+            span {
+                color: rgb(209, 207, 219);
+            }
+
+            &:hover img {
+                transform: translateY(-5px);
+            }
+        }
+    }
 }
 
 footer {
@@ -421,7 +458,6 @@ footer .stripe {
     position: relative;
     height: 300px;
     width: 100%;
-    margin: 0 0 10px 0;
     -webkit-touch-callout: none;
     /* iOS Safari */
     -webkit-user-select: none;
@@ -726,14 +762,14 @@ footer .stripe {
 }
 
 .mobile-menu .logo {
-    height: 45px;
+    height: 70px;
     border-radius: 0;
     display: flex;
     padding: 0 !important;
 }
 
 .mobile-menu .logo div {
-    margin: auto 15px;
+    margin: auto 25px;
 }
 
 .mobile-menu-open .mobile-menu-btn span:before, .mobile-menu-open .mobile-menu-btn span:after {
@@ -741,8 +777,8 @@ footer .stripe {
 }
 
 .mobile-menu-btn {
-    top: 13px;
-    right: 13px;
+    top: 25px;
+    right: 25px;
 }
 
 ::selection {
@@ -788,6 +824,7 @@ footer .stripe {
 
     &.background {
         position: absolute;
+        z-index: 0;
     }
 
     &.club, &.heart {
