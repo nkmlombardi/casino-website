@@ -4,6 +4,7 @@
   "description": "",
   "main": "server.js",
   "dependencies": {
+    "auth0-js": "^9.3.3",
     "bootstrap": "^4.0.0",
     "css3-animate-it": "github:Jack-McCourt/css3-animate-it",
     "express": "^4.16.2",
